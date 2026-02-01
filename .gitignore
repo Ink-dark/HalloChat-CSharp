@@ -1,0 +1,54 @@
+# 编译输出目录
+bin/
+obj/
+
+# Visual Studio 项目文件
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio 缓存目录
+.vs/
+
+# 日志文件
+*.log
+
+# 环境变量文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 包管理文件
+packages/
+
+# 构建工具生成的文件
+*.nupkg
+
+# 测试覆盖率文件
+coverage/
+*.coverage
+
+# 临时文件
+*.tmp
+*.temp
+
+# OS 生成的文件
+Thumbs.db
+.DS_Store
+
+# 编辑器生成的文件
+.vscode/
+.idea/
+
+# 发布目录
+publish/
+
+# 本地化文件
+*.resx
+
+# 配置文件
+appsettings.json
+appsettings.*.json
