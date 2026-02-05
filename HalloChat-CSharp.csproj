@@ -12,7 +12,7 @@
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="SocketIOClient" Version="3.0.10" />
+    <PackageReference Include="SocketIOClient" Version="3.1.0" />
   </ItemGroup>
 
 </Project>
