@@ -101,15 +101,22 @@
             
             <!-- 登录表单 -->
             <StackPanel Grid.Row="2" Margin="0,0,0,16" Width="320">
-                <TextBlock Text="用户名" FontSize="14" FontWeight="Medium" Foreground="#4a5568" Margin="0,0,0,4" />
-                <TextBox x:Name="UsernameTextBox" Style="{StaticResource MaterialTextBox}" Width="320" />
+                <TextBlock Text="服务器" FontSize="14" FontWeight="Medium" Foreground="#4a5568" Margin="0,0,0,4" />
+                <ComboBox x:Name="ServerComboBox" Width="320" Margin="0,0,0,8" Background="#f7fafc" BorderBrush="#e2e8f0" BorderThickness="1" CornerRadius="8" Padding="16,12" FontSize="14" IsEnabled="{Binding ElementName=LoginButton, Path=IsEnabled}" />
+                <TextBlock Text="用户名" FontSize="14" FontWeight="Medium" Foreground="#4a5568" Margin="0,8,0,4" />
+                <TextBox x:Name="UsernameTextBox" Style="{StaticResource MaterialTextBox}" Width="320" IsEnabled="{Binding ElementName=LoginButton, Path=IsEnabled}" KeyDown="LoginForm_KeyDown" />
                 <TextBlock Text="密码" FontSize="14" FontWeight="Medium" Foreground="#4a5568" Margin="0,8,0,4" />
-                <PasswordBox x:Name="PasswordBox" Width="320" Height="40" Margin="0,0,0,8" />
+                <PasswordBox x:Name="PasswordBox" Style="{StaticResource MaterialTextBox}" Width="320" IsEnabled="{Binding ElementName=LoginButton, Path=IsEnabled}" KeyDown="LoginForm_KeyDown" />
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,8,0,8">
-                    <CheckBox x:Name="RememberMeCheckBox" Content="记住我" Foreground="#4a5568" />
-                    <CheckBox x:Name="AdminModeCheckBox" Content="管理员模式" Foreground="#667eea" Margin="16,0,0,0" />
+                    <CheckBox x:Name="RememberMeCheckBox" Content="记住我" Foreground="#4a5568" IsEnabled="{Binding ElementName=LoginButton, Path=IsEnabled}" />
+                    <CheckBox x:Name="AdminModeCheckBox" Content="管理员模式" Foreground="#667eea" Margin="16,0,0,0" IsEnabled="{Binding ElementName=LoginButton, Path=IsEnabled}" />
                 </StackPanel>
                 <Button x:Name="LoginButton" Style="{StaticResource PrimaryButton}" Content="登录" Click="LoginButton_Click" Width="320" />
+                <!-- 加载指示器 -->
+                <StackPanel x:Name="LoadingStackPanel" Visibility="Collapsed" HorizontalAlignment="Center" Margin="0,8,0,0">
+                    <ProgressBar IsIndeterminate="True" Width="200" Height="4" Background="#e2e8f0" Foreground="#667eea" BorderThickness="0" CornerRadius="2" />
+                    <TextBlock Text="登录中..." FontSize="12" Foreground="#718096" HorizontalAlignment="Center" Margin="0,8,0,0" />
+                </StackPanel>
             </StackPanel>
         </Grid>
     </Grid>
